@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import './style.css'
+
 /** SIMPLE */
 
 //ReactDOM.render('Hello', document.getElementById('app'))
@@ -15,6 +17,6 @@ import ReactDOM from 'react-dom'
 /** WITH JSX THROUGH BABEL */
 
 ReactDOM.render(
-    <h1>Hello World 😃</h1>,
+    <h1>Hello World </h1>,
     document.getElementById('app')
 )
