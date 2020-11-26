@@ -5,6 +5,6 @@ export default function foo() {
     const body = document.getElementById("app");
     body.appendChild(button);
 
-    button.addEventListener("click", () => alert('Foo!'));
+    button.addEventListener("click", () => alert(`${process.env.NODE_ENV} 🤫`));
 
 }

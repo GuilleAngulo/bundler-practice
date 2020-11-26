@@ -13,6 +13,7 @@ const devServer = {
 
 /** Caching vendors (React) boilerplate bundle */
 const optimization = {
+    moduleIds: 'deterministic',
     runtimeChunk: 'single',
     splitChunks: {
         cacheGroups: {

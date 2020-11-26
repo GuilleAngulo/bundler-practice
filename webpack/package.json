@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "serve": "serve -s ./dist -p 8080 -n",
-    "build": "webpack --mode production",
-    "dev": "webpack --mode development --watch",
-    "dev:server": "webpack serve --mode development",
+    "build": "webpack --env NODE_ENV=production --mode production",
+    "dev": "webpack --env NODE_ENV=local --mode development --watch",
+    "dev:server": "webpack serve --env NODE_ENV=local --mode development",
     "stats": "webpack --profile --json > analyzer/stats.json"
   },
   "keywords": [],
