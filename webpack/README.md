@@ -2,7 +2,7 @@
     <img width="200" height="200" src="https://webpack.js.org/assets/icon-square-big.svg">
 </a>
 <br>
-This is a simple [Webpack](https://webpack.js.org/) project testing its different configuration properties for learning purposes.
+This is a simple **Webpack** project testing its different configuration properties for learning purposes.
   
 ## Commands
 
