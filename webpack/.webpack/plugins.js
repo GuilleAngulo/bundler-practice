@@ -1,9 +1,14 @@
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CompressionPlugin = require('compression-webpack-plugin')
 
-const developmentPlugins = []
+const developmentPlugins = [
+    new BundleAnalyzerPlugin({
+        analyzerMode: 'static',
+        reportFilename: '../analyzer/report.html'
+    })
+]
 
 const productionPlugins = [
     //Gzip

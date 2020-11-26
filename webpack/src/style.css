@@ -29,7 +29,7 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 1.2rem;
-  margin: 4px 2px;
+  margin: 0 10rem;
   transition-duration: 0.4s;
   cursor: pointer;
 }
