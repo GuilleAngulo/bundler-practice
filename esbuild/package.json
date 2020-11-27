@@ -4,15 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild src/app.jsx --bundle --minify --outfile=public/bundle.js --define:process.env.NODE_ENV='\"production\"' --format=esm"
+    "build:inline": "esbuild src/app.jsx --bundle --minify --outfile=public/bundle.js --define:process.env.NODE_ENV='\"production\"' --format=esm",
+    "build": "node create-bundle.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chokidar": "^3.4.3",
     "esbuild": "^0.8.16"
   },
   "dependencies": {
+    "colors": "^1.4.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
