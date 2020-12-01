@@ -27,13 +27,14 @@ function index(mode) {
         splitting: true
       }).catch(() => process.exit(1))
       const hrend = process.hrtime(hrstart)
-      console.info('[esbuild] ' + colors.green('Compilation finished'))
-      console.log('[esbuild] ' + colors.green('Compiled successfully in %dms'), hrend[1] / 1000000)
+      console.info(`[esbuild] ${terminalColor('Compilation finished', 'info')}`)
+      console.log(`[esbuild]  ${terminalColor(`Compiled successfully in ${hrend[1] / 1000000}ms`, 'info')}`)
       console.info('[esbuild] Watching files for updates...')
     });
   }
 
   else if (mode === 'production') {
+    const hrstart = process.hrtime()
     require('esbuild').build({
       entryPoints: ['src/app.tsx'],
       bundle: true,
@@ -47,12 +48,31 @@ function index(mode) {
       sourcemap: true,
       splitting: true
     }).catch(() => process.exit(1))
+
+    const hrend = process.hrtime(hrstart)
+      console.info(`[esbuild] ${terminalColor('Compilation finished', 'info')}`)
+      console.log(`[esbuild]  ${terminalColor(`Compiled successfully in ${hrend[1] / 1000000}ms`, 'info')}`)
   }
 
-  else console.error(colors.red("You must provide: --mode=development|production"))
+  else console.error(`${terminalColor("You must provide: --mode=development|production", 'error')}`)
 
 };
 
+
+function terminalColor(text, level) {
+  switch (level) {
+    /** green */
+    case 'info':
+    default:
+      return `\x1b[32m${text}\x1b[0m`;
+    /** yellow */
+    case 'warn':
+      return `\x1b[33m${text}\x1b[0m`;
+    /** red */
+    case 'error':
+      return `\x1b[31m${text}\x1b[0m`;
+  }
+}
 
 
 module.exports = index
